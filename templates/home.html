@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+        <link rel="manifest" href="/static/manifest.json" />
+        <title>CORS-Allowed Proxies</title>
+        <meta
+            name="description"
+            content="Simple API to retrieve SSL proxies, w/ CORS headers enabled to allow requests via browser."
+        />
+        <meta
+            property="og:title"
+            content="CORS-Allowed Proxies"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:description"
+            content="Simple API to retrieve SSL proxies, w/ CORS headers enabled to allow requests via browser."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.cors-allowed-proxies.com" />
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    </head>
+    <body>
+        <p>
+            Need a list of proxies for web crawling or other purposes?
+            sslproxies.org is a great resource, but its web
+            server does not have CORS headers configured to accept
+            cross-origin requests. This shouldn"t be a problem in general,
+            but when attempting a GET request via your web browser (e.g.
+            clicking a button to get proxies) you"ll likely be hit with
+            an error informing you that your browser has blocked the
+            request.
+        </p>
+        <p>
+            So here"s an alternative! A neat proxy server that will make
+            the request for your browser. Cross origin GET requests are
+            allowed here, so just make a request to the super simple
+            API explained below. The server retrieves the
+            payload from sslproxies.org without issue, then parses
+            to a useful format, and finally gets them back to you.
+        </p>
+        <br/>
+        <p>Usage</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td>/proxies/&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        Returns an JSON-formatted array of <= 100 elite/highly
+                        anonymous SSL proxies
+                    </td>
+                </tr>
+                <tr>
+                    <td>/proxies/csv/&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        Returns an CSV-formatted file of <= 100 elite/highly
+                        anonymous SSL proxies
+                    </td>
+                </tr>
+                <tr>
+                    <td>/proxy/&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        Returns one (1) elite/highly anonymous SSL proxy,
+                        tested for workability at httpbin.org/ip (may take
+                        a few seconds)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <br/>
+        <a href="/proxies/">Click for proxies</a>
+        <br/>
+        <a href="/proxies/csv/">Click for .csv proxies</a>
+        <br/>
+        <a href="/proxy/">Click for tested proxy</a>
+    </body>
+</html>
