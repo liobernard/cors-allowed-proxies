@@ -23,7 +23,7 @@
             content="Simple API to retrieve SSL proxies, w/ CORS headers enabled to allow requests via browser."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.cors-allowed-proxies.com" />
+        <link rel="canonical" href="https://cors-allowed-proxies.com" />
         <link rel="stylesheet" type="text/css" href="/static/style.css" />
     </head>
     <body>
@@ -50,21 +50,27 @@
         <table>
             <tbody>
                 <tr>
-                    <td>/proxies/&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <a href="/proxies/">/proxies/</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
                     <td>
                         Returns an array of <= 100 elite/highly
                         anonymous SSL proxies
                     </td>
                 </tr>
                 <tr>
-                    <td>/proxies/csv/&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <a href="/proxies/csv/">/proxies/csv/</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
                     <td>
                         Returns an CSV-formatted file of <= 100 elite/highly
                         anonymous SSL proxies
                     </td>
                 </tr>
                 <tr>
-                    <td>/proxy/&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <a href="/proxy/">/proxy/</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
                     <td>
                         Returns one (1) elite/highly anonymous SSL proxy,
                         tested for workability at httpbin.org/ip (may take
@@ -73,12 +79,5 @@
                 </tr>
             </tbody>
         </table>
-        <br/>
-        <br/>
-        <a href="/proxies/">Click for proxies</a>
-        <br/>
-        <a href="/proxies/csv/">Click for .csv proxies</a>
-        <br/>
-        <a href="/proxy/">Click for tested proxy</a>
     </body>
 </html>
