@@ -28,22 +28,24 @@
     </head>
     <body>
         <p>
-            Need a list of proxies for web crawling or other purposes?
-            sslproxies.org is a great resource, but its web
+            Need a list of proxies for web scraping or other purposes?
+            <b>sslproxies.org</b> is a great resource, but its web
             server does not have CORS headers configured to accept
-            cross-origin requests. This shouldn't be a problem in general,
-            but when attempting a GET request via your web browser (e.g.
-            clicking a button to get proxies) you'll likely be hit with
-            an error informing you that your browser has blocked the
-            request.
+            cross-origin requests. This shouldn't be a problem server-side,
+            but when attempting a GET request on the client-side via
+            web browser (e.g. a React.js component that fetches page
+            info from sslproxies.org on button press) you'll likely
+            be hit with an error informing you that your browser has
+            blocked the request.
         </p>
         <p>
-            So here's an alternative! A neat proxy server that will make
-            the request for your browser. Cross origin GET requests are
-            allowed here, so just make a request to the super simple
+            So here's an alternative - a neat proxy server that will make
+            the request for you! Cross-origin GET requests are
+            allowed here, so instead of sslproxies.org, just have your
+            client-side component make requests to the super simple
             API explained below. The server retrieves the
             payload from sslproxies.org without issue, then parses
-            to a useful format, and finally gets them back to you.
+            to a useful format, and finally gets the proxies back to you.
         </p>
         <br/>
         <p>Usage</p>
