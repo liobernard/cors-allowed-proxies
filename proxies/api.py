@@ -24,6 +24,12 @@ class HomeAPI(APIView):
             content_type='text/html',
         )
 
+    def options(self, request, *args, **kwargs):
+        if self.metadata_class is None:
+            return self.http_method_not_allowed(request, *args, **kwargs)
+        data = self.metadata_class().determine_metadata(request, self)
+        return Response(data, template_name='empty.html', status=200)
+
 
 class ProxiesAPI(APIView):
     permission_classes = (ReadOnly,)
