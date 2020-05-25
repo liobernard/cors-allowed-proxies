@@ -119,6 +119,15 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '10/hour'
+    }
+}
+
 STATIC_URL = config('STATIC_URL')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
